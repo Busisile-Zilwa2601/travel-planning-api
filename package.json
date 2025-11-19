@@ -1,0 +1,39 @@
+{
+  "name": "travel-planning-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.ts",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon ts-node src/server.ts",
+    "start": "ts-node src/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Busisile-Zilwa2601/travel-planning-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Busisile-Zilwa2601/travel-planning-api/issues"
+  },
+  "homepage": "https://github.com/Busisile-Zilwa2601/travel-planning-api#readme",
+  "dependencies": {
+    "@apollo/server": "^5.1.0",
+    "apollo-server": "^3.13.0",
+    "dotenv": "^17.2.3",
+    "graphql": "^16.12.0",
+    "graphql-tools": "^9.0.24",
+    "ioredis": "^5.8.2",
+    "mongoose": "^8.19.3"
+  },
+  "devDependencies": {
+    "@types/graphql": "^14.2.3",
+    "@types/node": "^24.10.1",
+    "cross-env": "^10.1.0",
+    "nodemon": "^3.1.11",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.3"
+  }
+}

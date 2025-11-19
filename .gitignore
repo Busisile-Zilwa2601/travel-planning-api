@@ -1,0 +1,18 @@
+# node modules
+node_modules/
+
+# Environment variables
+#.env
+#.env.local
+#.env.*.local
+
+# Logs
+logs
+*.log
+
+# IDE
+.vscode/
+
+# Mongo dumps
+dump/
+*.local.js
