@@ -12,7 +12,7 @@ const cityResolver: IResolvers = {
         return cached;
       }
       const suggestions = await getCitySuggestions(input, limit);
-      cached && await CacheService.set(key, suggestions);
+      await CacheService.set(key, suggestions);
       return suggestions;
     },
   },
