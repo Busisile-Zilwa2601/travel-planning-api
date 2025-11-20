@@ -25,3 +25,5 @@ const startServer = async () => {
 startServer().catch((err) => {
   console.error("Error starting server:", err);
 });
+
+export { server };
