@@ -28,4 +28,11 @@ export interface ActivityRanking {
     reason: string;
 }
 
+export interface WeatherResults {
+    name: string;
+    city: City;
+    forecast: WeatherForecast;
+    activityRanking: ActivityRanking[];
+}
+
 export type Activity = "Skiing" | "Surfing" | "IndoorSightseeing" | "OutdoorSightseeing";

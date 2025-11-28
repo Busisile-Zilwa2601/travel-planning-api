@@ -16,27 +16,27 @@ Technology Stack
 
 Folder Structure
 __tests__
-├── activityranking.test.ts  # activity tests
-├── cities.test.ts           # city retrieving test
-├── graphql.test             # Health test
-├── weatherforcast.test.ts   # weather test base on the location
+├── activityranking.test.ts  
+├── cities.test.ts           
+├── graphql.test             
+├── weatherforcast.test.ts   
 src/
-├── server.ts              # Apollo Server initialization
+├── server.ts              
 ├── schema/
-│   └── typeDefs.ts       # GraphQL type definitions
+│   └── typeDefs.ts       
 ├── resolvers/
-│   ├── index.ts          # Root resolver exports
-│   ├── city.resolver.ts   # City suggestion logic
-│   ├── forecast.esolver.ts # Weather forecast logic
-│   └── ranking.resolver.ts # Activity ranking logic
+│   ├── index.ts          
+│   ├── city.resolver.ts   
+│   ├── forecast.esolver.ts 
+│   └── ranking.resolver.ts 
 ├── services/
-│   ├── weather.ervice.ts # Weather & geolocation API calls
-│   ├── geolocation.service.ts # City search & caching
-│   └── activity.ranking.service.ts # Weather-based activity scoring
+│   ├── weather.ervice.ts 
+│   ├── geolocation.service.ts
+│   └── activity.ranking.service.ts
 ├── middleware/
-│   └── cache.service.ts  # In-memory/Redis caching layer
+│   └── cache.service.ts  
 ├── models/
-│   └── travel.interaface.ts          # TypeScript interfaces & types
+│   └── travel.interaface.ts
 
 
 ## Data Flow
@@ -67,6 +67,19 @@ Response
 5. Jest for Testing 
     ## Why ?
     - Zero-config setup with ts-jest; built-in mocking; great TypeScript support
+6. Docker 
+    # Why ? #
+    - Same environment everywhere
+
+# Ommited
+1.  ExpressJs
+    - Skipped: Apollo Standalone is sufficient, no unnecessary complexity
+    - Impact: Reduced bundle size
+2. Authentication (JWT/OAuth)
+    - Skipped: Out of scope for MVP
+    - Impact: No user isolation, all public queries
+3. Database
+    - Skipped: fetch all data from extenal api, uses Redis for caching.
 
 
 # Get Started
@@ -89,3 +102,23 @@ Response
    ```
    npm start
    ```
+
+ **Docker**
+    - Start api   
+        ```
+            docker-compose up --build
+        ```
+        OR
+
+        ```
+            docker-compose up --build -d
+        ```
+
+    - To stop and remove
+        ```
+            docker-compose down
+        ```
+    - To view logs
+        ```
+            docker-compose logs -f
+        ```

@@ -1,4 +1,3 @@
-import { URL } from 'url';
 import { WeatherForecast, DailyForecast } from '../models/travel.interface';
 
 const forecast_url = process.env.OPEN_METEO_API_URL as string;
