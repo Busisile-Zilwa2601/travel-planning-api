@@ -5,10 +5,11 @@ import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 import typeDefs from "./schema/typeDefs";
 import resolvers from "./resolvers/index";
+import { logger } from "./utils/logger";
 
 
 const PORT = process.env.PORT as string;
-console.log('Starting server on port:', PORT);
+logger.info(`Starting server on port: ${PORT}`);
 
 const server = new ApolloServer({
   typeDefs,
@@ -19,11 +20,11 @@ const startServer = async () => {
   const { url } = await startStandaloneServer(server, {
     listen: { port: parseInt(PORT) },
   });
-  console.log(`🚀  Server ready at: ${url}`);
+ logger.info(`🚀  Server ready at: ${url}`);
 };
 
 startServer().catch((err) => {
-  console.error("Error starting server:", err);
+  logger.error("Error starting server:", err);
 });
 
 export { server };

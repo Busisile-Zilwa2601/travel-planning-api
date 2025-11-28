@@ -1,10 +1,15 @@
 import { WeatherForecast, Activity, ActivityRanking } from "../models/travel.interface";
 
-
+// Normalize a value between min and max to a 0-1 scale
 function normalize(value: number, min: number, max: number): number {
     if(isNaN(value)) return 0;
     return Math.max(0, Math.min(1, (value - min) / (max - min))); // Clamp between 0 and 1
 }
+
+/*
+    Compute activity rankings based on weather forecast data.
+    Activities: Skiing, Surfing, IndoorSightseeing, OutdoorSightseeing
+*/
 
 export const getActivityRanking = (weather: WeatherForecast): ActivityRanking[] => {
     const days = weather.daily;

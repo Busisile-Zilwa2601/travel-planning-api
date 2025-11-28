@@ -1,0 +1,23 @@
+services:
+  api:
+    container_name: travel_planning_api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4002:4002"
+    env_file: ./.env
+    depends_on:
+      - redis
+    environment: 
+      - REDIS_URL=redis://redis:6379
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--appendonly", "yes"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "PING"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
