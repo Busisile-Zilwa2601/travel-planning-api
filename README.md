@@ -2,41 +2,43 @@
 
 ## Overview
 
-Travel planning API is a GraphQL-based backend service for a travel planning application. It provides dynamic city suggestions, weather forecasts, and AI-driven activity recommendations based on weather conditions.
+Travel planning API is a GraphQL-based backend service for a travel planning application. It provides dynamic city suggestions, weather forecasts, and activity recommendations based on weather conditions.
 
 ## Architecture Overview
 
 Technology Stack
 
-- ** Runtime: Node.js with TypeScript
-- ** API: Apollo GraphQL Server (Standalone)
-- ** External APIs: Open-Meteo (weather & geolocation)
-- ** Testing: Jest with ts-jest
-- ** Environment Management: dotenv
+- Runtime: Node.js with TypeScript
+- API: Apollo GraphQL Server (Standalone)
+- External APIs: Open-Meteo (weather & geolocation)
+- Testing: Jest with ts-jest
+- Environment Management: dotenv
 
 Folder Structure
-__tests__
-├── activityranking.test.ts  
-├── cities.test.ts           
-├── graphql.test             
-├── weatherforcast.test.ts   
-src/
-├── server.ts              
-├── schema/
-│   └── typeDefs.ts       
-├── resolvers/
-│   ├── index.ts          
-│   ├── city.resolver.ts   
-│   ├── forecast.esolver.ts 
-│   └── ranking.resolver.ts 
-├── services/
-│   ├── weather.ervice.ts 
-│   ├── geolocation.service.ts
-│   └── activity.ranking.service.ts
-├── middleware/
-│   └── cache.service.ts  
-├── models/
-│   └── travel.interaface.ts
+# __tests__ /
+    ### activityranking.test.ts  
+    ### cities.test.ts           
+    ### graphql.test             
+    ### weatherforcast.test.ts   
+# src/
+    ### server.ts              
+    ## schema/
+        ### typeDefs.ts       
+    ## resolvers/
+        ### index.ts          
+        ### city.resolver.ts   #
+        ### forecast.esolver.ts 
+        ### ranking.resolver.ts 
+    ## services/
+        ### weather.ervice.ts 
+        ### geolocation.service.ts
+        ### activity.ranking.service.ts
+    ## middleware/
+        ### cache.service.ts  
+    ## models/
+        ### travel.interaface.ts
+    ## utils
+        ### logger.ts
 
 
 ## Data Flow
@@ -53,25 +55,25 @@ Response
 
 # Technical Choices & Rationale
 1. Apollo Serve (Standalone)
-    ## Why ? 
+    #### Why ? 
     - Built-in HTTP server, minimal setup, production-ready
 2. TypeScript
-    ## Why ?
+    #### Why ?
     - Type safety
 3. Redis
-    ## Why ?
+    #### Why ?
     - Caching, storing results of expensive queries and fequently accessed objects
 4. Open-Meteo API
-    ## WHy ?
+    #### WHy ?
     - Free, no API key required, reliable weather & geolocation data
 5. Jest for Testing 
-    ## Why ?
+    #### Why ?
     - Zero-config setup with ts-jest; built-in mocking; great TypeScript support
 6. Docker 
-    # Why ? #
+    #### Why ? 
     - Same environment everywhere
 
-# Ommited
+## Ommited
 1.  ExpressJs
     - Skipped: Apollo Standalone is sufficient, no unnecessary complexity
     - Impact: Reduced bundle size
@@ -104,16 +106,17 @@ Response
    ```
 
  **Docker**
-    - Start api   
+    - Start api
+    
         ```
             docker-compose up --build
         ```
+        
         OR
-
+        
         ```
             docker-compose up --build -d
         ```
-
     - To stop and remove
         ```
             docker-compose down
