@@ -15,12 +15,12 @@ Technology Stack
 - Environment Management: dotenv
 
 Folder Structure
-# __tests__ /
+__tests__ /
     ### activityranking.test.ts  
     ### cities.test.ts           
     ### graphql.test             
     ### weatherforcast.test.ts   
-# src/
+src/
     ### server.ts              
     ## schema/
         ### typeDefs.ts       
