@@ -14,32 +14,37 @@ Technology Stack
 - Testing: Jest with ts-jest
 - Environment Management: dotenv
 
-Folder Structure
-__tests__ /
-    ### activityranking.test.ts  
-    ### cities.test.ts           
-    ### graphql.test             
-    ### weatherforcast.test.ts   
-src/
-    ### server.ts              
-    ## schema/
-        ### typeDefs.ts       
-    ## resolvers/
-        ### index.ts          
-        ### city.resolver.ts   #
-        ### forecast.esolver.ts 
-        ### ranking.resolver.ts 
-    ## services/
-        ### weather.ervice.ts 
-        ### geolocation.service.ts
-        ### activity.ranking.service.ts
-    ## middleware/
-        ### cache.service.ts  
-    ## models/
-        ### travel.interaface.ts
-    ## utils
-        ### logger.ts
+## Folder Structure
 
+travel-planning-api/ <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;config/<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; jest.config.ts <br/>
+&nbsp;&nbsp;&nbsp;&nbsp; src/ <br/>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; schema/ <br/>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; typeDefs.ts <br/>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; resolvers/ <br/>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; index.ts <br/>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; city.resolver.ts <br/>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; forecast.esolver.ts <br/>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; ranking.resolver.ts <br/>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; services/ <br />
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; weather.ervice.ts <br/> 
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; geolocation.service.ts <br/>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; activity.ranking.service.ts <br/>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; middleware/ <br/>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; cache.service.ts <br/>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; models/ <br/>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; travel.interaface.ts <br/>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; utils/ <br/>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; logger.ts <br/>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; server.ts <br/>
+&nbsp;&nbsp;&nbsp;&nbsp; docker-compose.yml <br/>
+&nbsp;&nbsp;&nbsp;&nbsp; Dockerfile <br/>
+&nbsp;&nbsp;&nbsp;&nbsp; package.json <br/>
+&nbsp;&nbsp;&nbsp;&nbsp; package-lock.json <br/>
+&nbsp;&nbsp;&nbsp;&nbsp; tsconfig.json <br/>
+&nbsp;&nbsp;&nbsp;&nbsp; .gitignore <br/>
+&nbsp;&nbsp;&nbsp;&nbsp; README.md <br/>
 
 ## Data Flow
 
@@ -106,22 +111,21 @@ Response
    ```
 
  **Docker**
-    - Start api
+ - Start api   
+    ```
+        docker-compose up --build
+    ```
     
-        ```
-            docker-compose up --build
-        ```
-        
-        OR
-        
-        ```
-            docker-compose up --build -d
-        ```
-    - To stop and remove
-        ```
-            docker-compose down
-        ```
-    - To view logs
-        ```
-            docker-compose logs -f
-        ```
+    OR
+    
+    ```
+        docker-compose up --build -d
+    ```
+- To stop and remove
+    ```
+        docker-compose down
+    ```
+- To view logs
+    ```
+        docker-compose logs -f
+    ```
